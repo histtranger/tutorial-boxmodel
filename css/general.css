@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+/* Shorthand
+
+margin {40 auto} top and bottom and left and right. It is fluid.
+margin two values = top/bottom, right/left
+margin {40 auto 0} = top, right/left, bottom
+margin {40px; 30px; 5px; 10px} top, right, bottom, left */
+
+/*Start at the top, then continue clockwise around the box
+
+Units of measurement rules:
+- Width = %
+- Heaight = rem
+- Type = rem
+- Graphics (border, )= pixels
+
+Child determinds the height of the parent element
+*/
+
+
+/* This controls the size of the viewport */
+@-moz-viewport { width: device-width; scale: 1; } /*Firefox*/
+@-ms-viewport { width: device-width; scale: 1; } /* Microsoft*/
+@-o-viewport { width: device-width; scale: 1; } /*Opera*/
+@-webkit-viewport { width: device-width; scale: 1; } /*Safari/Chrome*/
+@viewport { width: device-width; scale: 1; } /*Standard*/
+
+
+/* Adjusts padding so it adjusts to the box interior. */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+    
+    /* Controls the zoom on mobile devices*/
+    
+	-moz-text-size-adjust: 100%; /*This makes it stay as is.*/
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+    
+    font-size: 100%; /* Controls the default font size. This deals with rem. 100%= 16 pixels = 1 rem */
+    font-family: Georgia, Times, Serif;
+}
+
+/* No longer a fixed measurement, it gets bigger and smaller accordingly. Images are responsive to the zoom*/
+img {
+	width: 100%;
+    display: block;
+}
+
+body {
+    margin: 0; 
+    padding: 0
+}
+   
+/* To create a class, use a (.) to make one */
+.masshead {
+    background-color: maroon;
+    overflow:hidden
+}
+
+.logo {height: 4.5rem;
+        width: auto;
+        margin: 0.5rem 5%;
+        
+    /* display: block is how to center. float is to align things*/
+        display:block;
+        margin: .5rem auto
+}
+
+article { margin: 0;
+    padding: 0 5%;
+        overflow:hidden; /* overflow makes it so that parent wraps around child*/
+}
+
+h1 {margin: 1.5rem 0;
+    font-size: 5rem;
+    line-height: 4.5rem
+}
+
+h1 + p {font-size: 1.25rem;
+    font-weight: bold
+}
+
+p {line-height: 1.5rem;
+    margin: 0 0 1.5rem
+}
+
+figure { 
+    margin: 0 auto 1.5rem; /* auto: in case we want smaller */
+    width: 80%; /* size can be smaller, but not larger then 100%. Auto makes it so that when it gets smaller, the right and left margins are automatic*/
+}
+
+figcaption { 
+    margin: .5rem 0 0;
+    font-size: 0.75rem;
+}
+
+footer {
+    background-color: maroon;
+    overflow:hidden
+}
+
+
+footer p {/* p is a descendant is of footer*/
+    margin: .5rem 5% 5rem;
+    color: white;
+    font-size: .75rem
+}
+
+footer a {
+    color: white
+}
+
+
+
+
+    
+        
